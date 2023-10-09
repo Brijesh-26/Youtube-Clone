@@ -9,6 +9,8 @@ from taggit.models import Tag
 
 from userauths.models import Profile
 
+#this is real
+
 def index(request):
     video = Video.objects.filter(visibility="public").order_by("-date")
     context = {
@@ -41,7 +43,7 @@ def videoDetail(request, pk):
         "comment":comment,
         "similar_videos":similar_videos,
     }
-    return render(request, "video-detail.html", context)
+    return render(request, "video.html", context)
 
 
 def save_video(request, video_id):
